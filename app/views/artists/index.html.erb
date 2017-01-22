@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th></th>
     <th><%= sortable "name", "Artist" %></th>
     <th><%= sortable "created_at", "Created at" %></th>
   </tr>
   <% @artists.each do |artist| %>
     <tr>
-      <td><%= artist.name %></td>
+      <td><%= image_tag artist.photo %></td>
+      <td><%= link_to artist.name, artist %></td>
       <td><%= artist.created_at.strftime("%d/%m/%Y") %></td>
     </tr>
   <% end %>
