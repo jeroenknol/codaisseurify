@@ -1,0 +1,17 @@
+th {
+  .current {
+  padding-right: 15px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  }
+
+  .asc {
+    background-image: url(http://res.cloudinary.com/dfdlufyaj/image/upload/v1485085598/sort_up_bi6ood.svg);
+    background-size: 10px, 5px;
+  }
+
+  .desc {
+    background-image: url(http://res.cloudinary.com/dfdlufyaj/image/upload/v1485085598/sort_down_ijjjeb.svg);
+    background-size: 10px, 5px;
+  }
+}
