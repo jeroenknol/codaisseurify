@@ -1,0 +1,19 @@
+<div class="form-wrapper">
+<%= form_for @song do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.collection_select :artist_id, Artist.order(:name),:id,:name, include_blank: true %>
+  </p>
+
+  <p>
+    <%= f.submit (@song.new_record? ? "Create" : "Edit"), class: "flex-right" %>
+  </p>
+
+  <p>
+  </p>
+<% end %>
+</div>

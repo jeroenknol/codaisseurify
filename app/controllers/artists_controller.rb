@@ -10,19 +10,34 @@ class ArtistsController < ApplicationController
   end
 
   def new
-    @artist = Artist.new(artist_params)
+    @artist = Artist.new
   end
 
   def create
+    @artist = Artist.new(artist_params)
+
+    if @artist.save
+      redirect_to @artist
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def update
+    if @artist.update_attributes(artist_params)
+      redirect_to @artist
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @artist.destroy
+
+    redirect_to artists_path
   end
 
   private
