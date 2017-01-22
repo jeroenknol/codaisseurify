@@ -6,7 +6,7 @@
   </p>
 
   <p>
-    <%= f.collection_select :artist_id, Artist.order(:name),:id,:name, include_blank: true %>
+    <%= f.collection_select :artist_id, Artist.order(:name), :id, :name, include_blank: true %>
   </p>
 
   <p>

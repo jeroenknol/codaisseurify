@@ -1,8 +1,8 @@
 <h1><%= @artist.name %></h1>
-<%= link_to "Delete Artist", artists_url(artists.id), method: :delete %>
+<%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
 
 <% @artist.songs.each do |song| %>
-  <p><%= song.title %> - <%= link_to "delete song", "#"%></p>
+  <p><%= song.title %> - <%= link_to "delete song", "#" %></p>
 <% end %>
 
 <%= link_to "Add song", new_song_path %>
