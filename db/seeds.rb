@@ -1,5 +1,5 @@
-Artist.delete_all
 Song.delete_all
+Artist.delete_all
 
 song1 = Song.create(title: "Peace of mind")
 song2 = Song.create(title: "Another chance")
