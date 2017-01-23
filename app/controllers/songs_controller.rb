@@ -1,51 +1,29 @@
 class SongsController < ApplicationController
-  before_action :find_song, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @songs = Songs.order(sort_column + " " + sort_direction)
-  end
-
-  def show
-  end
-
-  def new
-    @song = Song.new
-  end
+  before_action :find_song, only: [:destroy]
+  before_action :set_artist
 
   def create
-    @song = Song.new(song_params)
-
-    if @song.save
-      redirect_to @song
-    else
-      render 'new'
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @song.update_attributes(song_params)
-      redirect_to @song
-    else
-      render 'edit'
-    end
+    @artist.songs.create!(song_params)
+    redirect_to artist_path(@artist)
   end
 
   def destroy
     @song.destroy
 
-    redirect_to song_path
+    redirect_to artist_path(@artist)
   end
 
   private
+  def set_artist
+    @artist = Artist.find(params[:artist_id])
+  end
+
   def find_song
-    @song = song.find(params[:id])
+    @song = Song.find(params[:id])
   end
 
   def song_params
-    params.require(:song).permit(:name)
+    params.require(:song).permit(:title)
   end
 
   def sort_column

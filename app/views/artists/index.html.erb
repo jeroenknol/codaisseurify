@@ -8,7 +8,7 @@
   </tr>
   <% @artists.each do |artist| %>
     <tr>
-      <td><%= image_tag artist.photo %></td>
+      <td><%= image_tag artist.photo, :class => "image"%></td>
       <td><%= link_to artist.name, artist %></td>
       <td><%= artist.created_at.strftime("%d/%m/%Y") %></td>
     </tr>

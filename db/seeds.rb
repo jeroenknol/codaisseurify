@@ -19,9 +19,9 @@ song8 = Song.create(title: "Strong")
 song9 = Song.create(title: "Wasting my young years")
 
 #ARTISTS
-artist1 = Artist.create(name: "Above & Beyond", photo: [photo1])
-artist2 = Artist.create(name: "Andrew Bayer", photo: [photo2])
-artist3 = Artist.create(name: "London Grammar", photo: [photo3])
+artist1 = Artist.create(name: "Above & Beyond", photo: "http://res.cloudinary.com/dfdlufyaj/image/upload/v1485086792/aboveAndBeyond_nqbi9t.jpg")
+artist2 = Artist.create(name: "Andrew Bayer", photo: "http://res.cloudinary.com/dfdlufyaj/image/upload/v1485086792/AndrewBayer_ssptkt.jpg")
+artist3 = Artist.create(name: "London Grammar", photo: "http://res.cloudinary.com/dfdlufyaj/image/upload/v1485086792/LondonGrammar_ai8gzw.jpg")
 
 artist1.songs << [song1]
 artist1.songs << [song2]
