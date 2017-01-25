@@ -40,8 +40,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'factory_girl_rails', '4.7.0'
-  
+
   gem 'faker', '1.6.6'
+
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
